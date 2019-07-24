@@ -2,13 +2,19 @@ import React,{ Component } from 'react';
 import './assets/css/App.css';
 
 import Home from './components/Home'
+import List from './components/List'
+import Form from './components/Form'
+import Fater from './components/Fater'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      你好
-      <Home/>
+      <div>
+        你好
+        {/* <Home/> */}
+        {/* <List/> */}
+        {/* <Form/> */}
+        <Fater/>
       </div>
     )
   }
