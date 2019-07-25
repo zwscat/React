@@ -6,9 +6,9 @@ class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: [{title:'录制ionic',checked:true},
-            {title:'录制node.js',checked:false},
-            {title:'录制vue',checked:true}]
+            list: [{id:1, title:'录制ionic', checked:true},
+            {id:2, title:'录制node.js', checked:false},
+            {id:3, title:'录制vue', checked:true}]
         };
     }
 
@@ -54,6 +54,7 @@ class List extends Component {
                 list: list
             })
         }
+        console.log(this.props)
     }
 
     render() {

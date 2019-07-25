@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
     constructor(props) {
@@ -10,7 +11,10 @@ class Form extends Component {
             citys: ['广州','深圳','东莞'],
             hobby: [{text:'打游戏',checked:true}, 
                 {text:'看电影', checked:false}, 
-                {text:'打火锅',checked:false}]
+                {text:'打火锅',checked:false}],
+            list: [{id:1, title:'吃饭'},
+                   {id:2, title:'睡觉'},
+                   {id:3, title:'打豆豆'}]
         };
     }
 
@@ -71,6 +75,16 @@ class Form extends Component {
                     <br/>
                     <input type='submit' value='提交'/>
                 </form>
+                <hr/>
+                <ul>
+                    {
+                        this.state.list.map((val,key)=>{
+                            return (
+                                <li key={key}><Link to={`/list/${val.id}`}>{val.title}</Link></li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         );
     }

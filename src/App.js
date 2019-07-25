@@ -1,21 +1,33 @@
 import React,{ Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './assets/css/App.css';
 
 import Home from './components/Home'
 import List from './components/List'
 import Form from './components/Form'
-import Fater from './components/Fater'
+// import Fater from './components/Fater'
+// import Router from './components/Router'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        你好
-        {/* <Home/> */}
-        {/* <List/> */}
-        {/* <Form/> */}
-        <Fater/>
-      </div>
+      <Router>
+        <div>
+          {/* <Home/> */}
+          {/* <Form/> */}
+          {/* <Fater/> */}
+          {/* <Router/> */}
+          <ul>
+            <li><Link to='/'>首页</Link></li>
+            <li><Link to='/form'>表单</Link></li>
+          </ul>
+          <br/>
+          <hr/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/form' component={Form} />
+          <Route exact path='/list/:id' component={List} />
+        </div>
+      </Router>
     )
   }
 }
